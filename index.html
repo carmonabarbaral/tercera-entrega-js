@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<title>Montesorri School</title>
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<h1>Montesorri School</h1>
+				<div class="iconCarrito">
+					<i class="bx bxs-cart"></i>
+					<span id="countCarrito">0</span>
+				</div>
+				<div class="nav">
+					<ul class="nav__list"></ul>
+					<div id="total"></div>
+					<a href="#" class="btn-primary" id="btn-finalizar"
+						>Finalizar Compra</a
+					>
+				</div>
+			</div>
+		</header>
+
+		<main class="main">
+			<h2>Materias</h2>
+			<div class="container">
+				<div class="grados"></div>
+				<div id="materias__container"></div>
+			</div>
+		</main>
+
+		<script src="./javascript/app.js"></script>
+	</body>
+</html>
