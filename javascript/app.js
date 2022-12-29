@@ -17,55 +17,99 @@ function animateBars() {
 const materias = [
 	{
 		id: 1,
-		nombre: "matematica",
+		nombre: "Matemática",
 		img: "https://img.freepik.com/vector-premium/matematicas_23-2148178218.jpg?w=2000",
-		grado: "primero",
-		descripcion: "matetica es una materia",
+		grado: " Curso : primero",
+		descripcion: "Aprende matemática de una forma dinámica y divertida que recordarás para siempre",
 		precio: 1000,
 	},
 	{
 		id: 2,
-		nombre: "lengua",
-		grado: "segundo",
+		nombre: "Lengua",
+		grado: " Curso : segundo",
 		img: "https://img.freepik.com/vector-premium/matematicas_23-2148178218.jpg?w=2000",
-		grado: "primero",
-		descripcion: "matetica es una materia",
+		descripcion: "Aprende el maravilloso arte del lenguaje y todas sus utilidades",
 		precio: 1200,
 	},
 	{
 		id: 3,
-		nombre: "ciencias sociales",
-		grado: "primero",
+		nombre: "Ciencias sociales",
+		grado: " Curso : primero",
 		img: "https://img.freepik.com/vector-premium/matematicas_23-2148178218.jpg?w=2000",
-		grado: "primero",
-		descripcion: "matetica es una materia",
+		descripcion: "Descubrí todo lo que podés aprender sobre nuestro territorio y organización del territorio",
 		precio: 1400,
 	},
 	{
 		id: 4,
-		nombre: "ciencias naturales",
-		grado: "tercero",
+		nombre: "Ciencias naturales",
+		grado: " Curso : tercero",
 		img: "https://img.freepik.com/vector-premium/matematicas_23-2148178218.jpg?w=2000",
-		grado: "primero",
-		descripcion: "matetica es una materia",
+		descripcion: "Aprendé experimentando",
 		precio: 1600,
 	},
 	{
 		id: 5,
-		nombre: "historia",
-		grado: "primero",
+		nombre: "Historia",
+		grado: " Curso : cuarto",
 		img: "https://img.freepik.com/vector-premium/matematicas_23-2148178218.jpg?w=2000",
-		grado: "primero",
-		descripcion: "matetica es una materia",
+		descripcion: "Hace un recorrido por nuestra historia y descubrí nuestros origenes ",
 		precio: 1800,
 	},
+	
 	{
 		id: 6,
-		nombre: "geografia",
-		grado: "segundo",
+		nombre: "Geografia",
+		grado: "Curso: quinto",
+		img: "https://img.freepik.com/vector-premium/matematicas_23-2148178218.jpg?w=2000",
+		descripcion: "Aprendé todo sobre territorios nacionales e internacionales a través de juegos",
+		precio: 2000,
+	},
+	{
+		id: 7,
+		nombre: "Bellas artes ",
+		grado: "Curso: todos",
+		img: "https://img.freepik.com/vector-premium/matematicas_23-2148178218.jpg?w=2000",
+		descripcion: "Desarrolla tus habilidades y percepción y dejá volar tu imaginación",
+		precio: 2000,
+	},
+	{
+		id: 8,
+		nombre: "Música",
+		grado: " Curso : segundo",
+		img: "https://img.freepik.com/vector-premium/matematicas_23-2148178218.jpg?w=2000",
+		descripcion: "Conocé y práctica el uso de diferentes instrumentos y desarrolla tu voz",
+		precio: 2000,
+	},
+	{
+		id: 9,
+		nombre: "Ajedrez",
+		grado: "Curso: todos",
+		img: "https://img.freepik.com/vector-premium/matematicas_23-2148178218.jpg?w=2000",
+		descripcion: "Desplegá tu inteligencia y talento en estrategias de juego",
+		precio: 2000,
+	},{
+		id: 10,
+		nombre: "Programación",
+		grado: "Curso: todos",
+		img: "https://img.freepik.com/vector-premium/matematicas_23-2148178218.jpg?w=2000",
+		descripcion: "Conocé y práctica la carrera del futuro",
+		precio: 2000,
+	},
+	{
+		id: 11,
+		nombre: "Taller literario",
+		grado: "Curso: tercero",
+		img: "https://img.freepik.com/vector-premium/matematicas_23-2148178218.jpg?w=2000",
+		descripcion: "Lectura, escritura e imaginación te esperan",
+		precio: 2000,
+	},
+	{
+		id: 12,
+		nombre: "Yoga",
+		grado: "Curso: Todos",
 		img: "https://img.freepik.com/vector-premium/matematicas_23-2148178218.jpg?w=2000",
 		grado: "primero",
-		descripcion: "matetica es una materia",
+		descripcion: "Probá y disfruta desde pequeño sus beneficios",
 		precio: 2000,
 	},
 ];
@@ -88,6 +132,7 @@ function mostrarProductos() {
         <h3>${materia.nombre}</h3>
         <img src="${materia.img}" alt="" />
         <p>${materia.descripcion}</p>
+		<p>${materia.grado}</p>
         <p>$${materia.precio}</p>
         <a href="#" class="boton-comprar" id='${materia.id}'>Comprar</a>
       </div>`;
@@ -163,7 +208,7 @@ function imprimirCarrito() {
 	// llamamos a la funcion q crea el total o muestra que el carrito esta vacio
 	crearTotal();
 }
-
+let sumatotal = 0;
 crearTotal();
 actualizarCarrito();
 imprimirCarrito();
@@ -171,7 +216,7 @@ imprimirCarrito();
 // Creamos a la funcion va a crear el total
 function crearTotal() {
   // Iniciamos la variable sumatotal en 0 y reccorremos el carrito multiplicando la cantidad por el precio de cada producto y vamos sumando el valor.
-	let sumatotal = 0;
+	
 	carrito.forEach((producto) => {
 		sumatotal += producto.precio * producto.cantidad;
 	});
@@ -191,3 +236,8 @@ function carritoVacio() {
 	total.innerHTML = `El carrito esta vacio`;
 	btnFinalizar.style.display = "none";
 }
+const boton = document.querySelector("#boton");
+boton.addEventListener("click", ()=>{
+	Swal.fire('Cursada seleccionada')
+});
+

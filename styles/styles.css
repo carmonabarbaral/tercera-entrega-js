@@ -81,7 +81,7 @@
 }
 
 .card {
-	border: 1px solid red;
+	border: 1px solid rgb(0, 255, 179);
 	padding: 2em;
 	border-radius: 0.5em;
 	display: flex;
