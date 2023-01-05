@@ -75,9 +75,9 @@
 
 #materias__container {
 	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-around;
-	gap: 2em;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 2em;
 }
 
 .card {
